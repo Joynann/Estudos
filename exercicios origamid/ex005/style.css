@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+section {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid rgb(41, 41, 41, 0.41);
+}
+section > div {
+    background-color: tomato;
+    margin: 5px;
+}
+
+section.column {
+    min-height: 200px;
+    flex-direction: column;
+}
+
+section.flex-start {
+    justify-content: flex-start;
+}
+section.flex-end {
+    justify-content: flex-end;
+}
+section.center {
+    justify-content: center;
+}
+section.space-between {
+    justify-content: space-between;
+}
+section.space-around {
+    justify-content: space-around;
+}
+section.flex-space-around {
+    justify-content: space-around;
+}
+section.flex-space-around > div {
+    flex: 1;
+}
+
+section.column-flex-start {
+    justify-content: flex-start;
+}
+section.column-flex-end {
+    justify-content: flex-end;
+}
+section.column-center {
+    justify-content: center;
+}
+section.column-space-between {
+    justify-content: space-between;
+}
+section.column-space-around {
+    justify-content: space-around;
+}
+section.column-flex-space-around {
+    justify-content: space-around;
+}
+section.column-flex-space-around > div {
+    flex: 1;
+}

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+section {
+    display: flex;
+    max-width: 400px;
+    margin: auto;
+    border: 1px solid rgb(41, 41, 41, 0.41);
+}
+section > div {
+    background-color: tomato;
+    margin: 5px;
+}
+
+.grow0 {
+    flex-grow: 0;
+}
+.grow1 {
+    flex-grow: 1;
+}
+.grow2 {
+    flex-grow: 2;
+}

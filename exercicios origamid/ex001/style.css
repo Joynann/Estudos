@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+
+* {
+    margin: 0;
+    padding: 0;
+    font: normal normal 1.1em serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 30px auto 0;
+}
+
+section {
+    max-width: 500px;
+    margin: auto;
+    border: .5px solid rgba(41, 41, 41, 0.41);
+}
+
+
+section#block {
+    padding: 0 10px;
+}
+section#block > div {
+    background-color: tomato;
+    margin: 8px auto;
+}
+
+section#flex1 {
+    display: flex;
+    padding: 5px;
+}
+section#flex1 > div {
+    background-color: tomato;
+    margin-left: 5px;
+}
+
+section#flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+section#flex2 > div {
+    background-color: tomato;
+    margin: 5px;
+}
+
+section#flex3 {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 50px;
+}
+section#flex3 > div {
+    background-color: tomato;
+    margin: 5px;
+    flex: 1;
+}

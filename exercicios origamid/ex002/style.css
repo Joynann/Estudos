@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+section {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid rgb(41, 41, 41, 0.41);
+}
+section > div {
+    background-color: tomato;
+    margin: 5px;
+    flex: 1;
+}
+
+section.flex-row {
+    flex-direction: row;
+}
+
+section.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+section.flex-column {
+    flex-direction: column;
+}
+
+section.flex-column-reverse {
+    flex-direction: column-reverse;
+}

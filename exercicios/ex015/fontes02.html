@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Fontes Externas</title>
+    <style>
+        /*
+            Tipo de format()
+            - opentype (otf)
+            - truetype (ttf)
+            - embedded-opentype
+            - truetype-aat (Apple Advanced Typography)
+        */
+        @font-face {
+            font-family: 'Metal Lady';
+            src: url('fonts/Metal Lady - Personal Use.otf') format('opentype');
+        }
+
+        body {
+            font: normal normal 1.5em 'Robot Mono', monospace;
+        }
+
+        h1, h2 {
+            font: normal normal 2em 'Metal Lady', serif;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Título da Página</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi neque harum incidunt doloribus veritatis ipsum hic repudiandae expedita soluta. Voluptate culpa sapiente aliquam exercitationem quidem, ad labore odio saepe voluptatum?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae dolores nemo asperiores labore ipsam voluptatibus beatae natus? Ipsam veniam tempora sequi architecto eum culpa assumenda, odit reiciendis dolores, quod laudantium.</p>
+
+    <h2>Subtítulo da página</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde sit praesentium architecto fugiat. Perspiciatis quod veritatis saepe molestiae ex culpa iure mollitia sed! Cupiditate velit ratione voluptate, odio eveniet non.</p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Pseudo Elemento</title>
+    <style>
+        /*
+            id = # (só pode um elemento)
+            class = .
+            : = pseudo-class
+            :: = pseudo-element
+            > = children
+        */
+        body {
+            font: normal normal 1em Arial, Helvetica, sans-serif;
+        }
+        
+        a {
+            color: red;
+            text-decoration: none;
+        }
+        a:visited {
+            color: darkred;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: darkslateblue;
+        }
+        a:active {
+            color: darkred;
+        }
+
+        .important {
+            color: rgb(233, 0, 78);
+        }
+        .important:visited {
+            color: rgb(100, 0, 33);
+        }
+        .important:hover {
+            text-decoration: underline;
+            color: darkslateblue;
+        }
+        .important:active {
+            color: rgb(100, 0, 33);
+        }
+        .important::before {
+            content: ' ⇒';
+        }
+        .important::after {
+            content: '⇐ ';
+        }
+    </style>
+</head>
+<body>
+    <h1>Tratando links com Pseudo Elemento.</h1>
+
+    <p><a href="index.html" target="_blank" rel="prev">Página principal</a></p>
+    <p><a href="hover.html" target="_blank" rel="next">Página de Pseudo Classes</a></p>
+    <p><a href="https://youtu.be/vMlrcOVr7po" target="_blank" rel="external" class="important">Vídeo desta aula</a></p>
+
+</body>
+</html>
