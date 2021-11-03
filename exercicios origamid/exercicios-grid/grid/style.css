@@ -1,0 +1,34 @@
+.grid-1 {
+    grid: 100px / 1fr 1fr;
+}
+
+.grid-2 {
+    grid: 100px / auto-flow 100px 50px;
+}
+
+.grid-3 {
+    grid: 
+    "logo nav nav" 50px
+    "sidenav content advert" 150px
+    "sidenav footer footer" 100px
+    / 100px 1fr 50px;
+}
+
+.logo {
+    grid-area: logo;
+}
+.nav {
+    grid-area: nav;
+}
+.sidenav {
+    grid-area: sidenav;
+}
+.content {
+    grid-area: content;
+}
+.advert {
+    grid-area: advert;
+}
+.footer {
+    grid-area: footer;
+}

@@ -1,0 +1,15 @@
+.gap {
+    gap: 20px;
+}
+
+.column-gap {
+    column-gap: 20px;
+}
+
+.row-gap {
+    row-gap: 20px;
+}
+
+.margin {
+    margin: 10px 0 50px 20px;
+}

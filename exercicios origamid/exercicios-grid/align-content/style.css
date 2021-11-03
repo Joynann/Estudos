@@ -1,0 +1,35 @@
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    height: 300px;
+}
+
+.start {
+    align-content: start;
+}
+.end {
+    align-content: end;
+}
+.center {
+    align-content: center;
+}
+.stretch {
+    align-content: stretch;
+    grid-template-rows: auto;
+}
+.space-around {
+    align-content: space-around;
+}
+.space-between {
+    align-content: space-between;
+}
+.space-evenly {
+    align-content: space-evenly;
+}
+
+.item-2, .item-3 {
+    grid-row: span 2;
+}
+.item-5 {
+    grid-column: span 2;
+}

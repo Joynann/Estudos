@@ -1,0 +1,24 @@
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 50px);
+}
+
+.item-2, .item-3 {
+    grid-row: span 2;
+}
+.item-5 {
+    grid-column: span 2;
+}
+
+.start {
+    justify-items: start;
+}
+.end {
+    justify-items: end;
+}
+.center {
+    justify-items: center;
+}
+.stretch {
+    justify-items: stretch;
+}
