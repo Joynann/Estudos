@@ -1,2 +1,2 @@
 # Estudo-de-HTML
- Repositório de exercícios de cursos em geral.
+ Repositório de exercícios de cursos de Desenvolvimento Web.
