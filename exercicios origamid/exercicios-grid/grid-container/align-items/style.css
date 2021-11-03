@@ -1,0 +1,17 @@
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+}
+
+.start {
+    align-items: start;
+}
+.end {
+    align-items: end;
+}
+.center {
+    align-items: center;
+}
+.stretch {
+    align-items: stretch;
+}
