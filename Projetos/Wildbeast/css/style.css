@@ -21,6 +21,7 @@
 img {
     display: block;
     max-width: 100%;
+    width: 100%;
     border-radius: 5px;
 }
 ul {
@@ -33,12 +34,39 @@ a {
 /* Grid Geral */
 
 .grid {
+    width: 100%;
     display: grid;
     grid-template-columns: minmax(160px, 1fr) 3fr 300px;
     grid-template-areas: 
     "header header header"
     "sidenav content anuncio"
     "footer footer footer";
+}
+
+/* Grid Geral (1200px) */
+
+@media (max-width: 1200px){
+    .grid {
+        grid-template-areas: 
+        "header header header"
+        "sidenav content content"
+        "sidenav anuncio anuncio"
+        "footer footer footer";
+    }
+}
+
+/* Grid Geral (760px) */
+
+@media (max-width: 760px){
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "sidenav"
+        "content"
+        "anuncio"
+        "footer";
+    }
 }
 
 /* Header */
@@ -109,6 +137,32 @@ a {
 
 .sidenav a:hover {
     background-color: var(--cor1);
+}
+
+/* sidenav (760px) */
+
+@media (max-width: 760px){
+
+    .sidenav {
+        width: 100%;
+        overflow-x: auto;
+        /* position: relative;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar; */
+    }
+
+    .sidenav ul {
+        display: flex;
+    }
+
+    .sidenav ul li {
+        margin: 0;
+        flex: 1 0 60px;
+    }
+
+    .sidenav li + li {
+        margin-left: 30px;
+    }
 }
 
 /* content */
@@ -199,12 +253,17 @@ p {
     grid-column: 1 / -1;
 
     background: var(--gradient);
-    padding: 30px 60px;
+    padding: 30px 0;
     border-radius: 5px;
     text-align: center;
     color: white;
     font-size: 1.5em;
     font-style: italic;
+}
+
+.citacao blockquote {
+    width: 500px;
+    margin: 0 auto;
 }
 
 main ul {
@@ -247,11 +306,22 @@ main ul li + li {
     margin-top: 30px;
 }
 
+/* anuncio (1200px) */
+
+@media (max-width: 1200px){
+    .anuncio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+}
+
 /* footer */
 
 .footer {
     grid-area: footer;
 
+    margin-top: 30px;
     padding: 30px 0;
     background: var(--gradient);
     text-align: center;
