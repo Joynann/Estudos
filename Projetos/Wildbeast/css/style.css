@@ -7,6 +7,8 @@
     --cor0: #8844ee;
     --cor1: #b07dfb;
 
+    --gradient: linear-gradient(135deg, var(--cor0), var(--cor1));
+
     --font-padrao: 'Vollkorn', Georgia, serif;
 }
 
@@ -44,7 +46,7 @@ a {
 .header {
     grid-area: header;
 
-    background: linear-gradient(135deg, var(--cor0), var(--cor1));
+    background: var(--gradient);
     padding: 2.2em;
 
     display: grid;
@@ -130,7 +132,7 @@ a {
 .header-main-title p {
     font-size: 0.875em;
     font-style: italic;
-    color: #af7dfb;
+    color: var(--cor1);
 }
 
 .header-main-info {
@@ -139,7 +141,7 @@ a {
 
 .header-main-info div {
     display: inline-block;
-    background: linear-gradient(135deg, var(--cor0), var(--cor1));
+    background: var(--gradient);
     text-align: center;
     font-size: 3em;
     padding: 0px 16px 0 16px;
@@ -168,8 +170,20 @@ a {
     margin-left: 30px;
 }
 
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: rgba(10, 2, 2, 0.7);
+}
+
 .p-1 {
     grid-column: 1 / -1;
+}
+
+.p-2 {
+    width: 220px;
+    font-size: 0.875em;
+    color: var(--cor1);
 }
 
 .imagem-1 {
@@ -177,27 +191,72 @@ a {
     grid-row: span 2;
 }
 
+.imagem-1, .imagem-2 {
+    align-self: end;
+}
+
 .citacao {
     grid-column: 1 / -1;
+
+    background: var(--gradient);
+    padding: 30px 60px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 main ul {
     grid-row: span 2;
+    align-self: start;
+
+    background: var(--gradient);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+main ul li {
+    padding: 15px;
+    color: white;
+    font-size: 1.125em;
+    font-family: Courier, monospace;
+}
+
+main ul li + li {
+    border-top: 2px solid var(--cor1);
 }
 
 .imagem-3 {
     grid-column: 1 / -1;
 }
 
+.imagem-3 img {
+    width: 100%;
+}
+
 /* anuncio */
 
 .anuncio {
     grid-area: anuncio;
+
+    padding: 0 30px;
 }
 
+.anuncio div {
+    margin-top: 30px;
+}
 
 /* footer */
 
 .footer {
     grid-area: footer;
+
+    padding: 30px 0;
+    background: var(--gradient);
+    text-align: center;
+}
+
+.footer p {
+    color: white;
 }
