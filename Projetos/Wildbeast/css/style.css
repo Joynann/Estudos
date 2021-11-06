@@ -142,6 +142,7 @@ a {
     max-width: 100px;
     padding: 20px;
     box-shadow: 5px 5px 15px 5px rgba(44, 44, 44, 0.1);
+    transition: 0.2s;
 }
 
 .sidenav li + li {
@@ -154,14 +155,27 @@ a {
 
 /* sidenav (760px) */
 
+@keyframes seta {
+    from{right:30px;}
+    to{right: 20px;}
+}
+
 @media (max-width: 760px){
 
     .sidenav {
         margin: 0;
         overflow-x: auto;
-        /* position: relative;
+        position: relative;
         -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar; */
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .sidenav::after {
+        animation: seta 1s infinite ease-out alternate;
+        content: "⮕";
+        position: absolute;
+        top: 5px;
+        right: 30px;
     }
 
     .sidenav ul {
