@@ -28,29 +28,29 @@ function initAccordionNav(){
     accordionList[0].classList.add(activeClass);
     accordionList[0].nextElementSibling.classList.add(activeClass);
     
-    // accordionList.forEach((item, index) => {
-    //     if(index){
-    //         item.nextElementSibling.classList.add('slide-up');
-    //     };
-    // });
+    accordionList.forEach((item, index) => {
+        if(index){
+            item.nextElementSibling.classList.add('slide-up');
+        };
+    });
 
     if(accordionList.length){
         function navAccordion(){
             this.classList.toggle(activeClass);
 
-            // const ddClassList = this.nextElementSibling.classList;
-            // const verificarAtivo = ddClassList.contains('ativo');
-            // if(verificarAtivo) {
-            //     setTimeout(() => {
-            //         ddClassList.remove('ativo');
-            //     }, 300);
-            // }else {
-            //     ddClassList.add('ativo');
-            // }
+            const ddClassList = this.nextElementSibling.classList;
+            const verificarAtivo = ddClassList.contains('ativo');
+            if(verificarAtivo) {
+                setTimeout(() => {
+                    ddClassList.remove('ativo');
+                }, 300);
+            }else {
+                ddClassList.add('ativo');
+            }
 
-            this.nextElementSibling.classList.toggle(activeClass);
+            /*this.nextElementSibling.classList.toggle(activeClass);*/
 
-            // this.nextElementSibling.classList.toggle('slide-up');
+            this.nextElementSibling.classList.toggle('slide-up');
 
         };
 
@@ -78,7 +78,7 @@ initAccordionNav();
         window.scrollTo({
             top: topo,
             behavior: 'smooth',
-        });*
+        });
         
     };
 
@@ -87,3 +87,26 @@ initAccordionNav();
     });
 };
 initScrollSuave();*/
+
+function initAnimaScroll(){
+    const sections = document.querySelectorAll('.js-scroll');
+
+    if(sections.length) {
+        function animaScroll() {
+            sections.forEach(section => {
+                const calculoTela = window.innerHeight * 0.6;
+                const sectionTop = (section.getBoundingClientRect().top - calculoTela) < 0;
+                if(sectionTop){
+                    section.classList.add('ativo');
+                }else {
+                    section.classList.remove('ativo');
+                }
+            });
+        }
+
+        animaScroll();
+
+        window.addEventListener('scroll', animaScroll);
+    }
+};
+initAnimaScroll();
