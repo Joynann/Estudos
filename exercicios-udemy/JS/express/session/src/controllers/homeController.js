@@ -1,1 +1,5 @@
-exports.home = (req, res) => res.render('index');
+exports.home = (req, res) => 
+{
+    console.log(req.session.usuario);
+    res.render('index');
+};
