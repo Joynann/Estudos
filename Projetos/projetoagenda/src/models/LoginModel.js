@@ -1,6 +1,7 @@
 const req = require('express/lib/request');
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcryptjs = require('bcryptjs');
 
 const LoginSchema = new mongoose.Schema(
     {
@@ -23,8 +24,11 @@ class Login
     async register()
     {
         this.cleanUp();
-        this.valida();
+        await this.valida();
         if(this.errors.length) return;
+
+        const salt = bcryptjs.genSaltSync();
+        this.body.password = bcryptjs.hashSync(this.body.password, salt);
 
         try
         {
@@ -53,8 +57,13 @@ class Login
         }
     }
 
-    valida()
+    async valida()
     {
+        if(await LoginModel.findOne({email: this.body.email}))
+        {
+            this.errors[this.errors.length] = 'Este usuário já está cadastrado.';
+            return;
+        }
         if(!validator.isEmail(this.body.email)) 
         {
             this.errors[this.errors.length] = 'E-mail inválido.';
