@@ -1,9 +1,7 @@
-exports.home = (req, res) => 
+exports.index = (req, res) => 
 {
     res.render('index', 
     {
-        titulo: 'Título'
+        titulo: 'Página principal'
     });
-};
-
-exports.homePost = (req, res) => res.send(req.body.nome);
+}
