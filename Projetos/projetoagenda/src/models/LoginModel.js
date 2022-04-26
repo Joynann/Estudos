@@ -30,14 +30,27 @@ class Login
         const salt = bcryptjs.genSaltSync();
         this.body.password = bcryptjs.hashSync(this.body.password, salt);
 
-        try
+        this.user = await LoginModel.create(this.body);
+    }
+
+    async login()
+    {
+        // Limpando dados
+        this.cleanUp();
+
+        // Procurando email na base de dados
+        this.user = await LoginModel.findOne({email: this.body.email});
+
+        // Verificando usuário
+        if(!this.user || !bcryptjs.compareSync(this.body.password, this.user.password))
         {
-            this.user = await LoginModel.create(this.body);
+            this.user = null;
+            this.errors[this.errors.length] = 'Usuário ou senha incorretos.';
+            return;
         }
-        catch(e)
-        {
-            console.log(e);
-        }
+
+        // Retornando usuário
+        return this.user;
     }
 
     cleanUp()

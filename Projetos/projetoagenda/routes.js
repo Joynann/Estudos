@@ -13,6 +13,7 @@ router.get('/', homeController.index);
 // Login
 router.get('/login', loginController.index);
 router.post('/login/register', loginController.register);
+router.post('/login/login', loginController.login);
 
 // Export Router
 exports.router = router;

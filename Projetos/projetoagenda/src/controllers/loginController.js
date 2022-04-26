@@ -41,3 +41,44 @@ exports.register = async function(req, res)
         });
     }
 }
+
+exports.login = async function(req, res)
+{
+    try
+    {
+        // Declarando a classe
+        const login = new Login(req.body);
+        await login.login();
+
+        // Em caso de erro
+        if(login.errors.length)
+        {
+            req.flash('errors', login.errors);
+            req.session.save(function()
+            {
+                return res.redirect('back');
+            })
+            return;
+        }
+
+
+        // Em caso de sucesso
+        req.session.user = login.user;
+        res.locals.user = req.session.user;
+        
+        req.flash('success', 'Login efetuado com sucesso.');
+        req.session.save(function()
+        {
+            return res.redirect('/');
+        })
+        return;
+    }
+    catch(e)
+    {
+        console.log(e);
+        return res.render('404',
+        {
+            titulo: 'Erro 404!'
+        });
+    }
+}
