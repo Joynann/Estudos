@@ -64,7 +64,6 @@ exports.login = async function(req, res)
 
         // Em caso de sucesso
         req.session.user = login.user;
-        res.locals.user = req.session.user;
         
         req.flash('success', 'Login efetuado com sucesso.');
         req.session.save(function()
@@ -82,3 +81,16 @@ exports.login = async function(req, res)
         });
     }
 }
+
+// exports.logout = (req, res) =>
+// {
+//     req.session.destroy();
+//     req.session.reload();
+//     res.locals.user = null;
+//     req.flash('success', 'Você saiu de sua conta com sucesso.');
+//     req.session.save(function()
+//     {
+//         return res.redirect('/');
+//     })
+//     return;
+// }

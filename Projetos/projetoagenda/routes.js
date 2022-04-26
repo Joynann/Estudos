@@ -12,6 +12,7 @@ router.get('/', homeController.index);
 
 // Login
 router.get('/login', loginController.index);
+router.get('/logout', loginController.logout);
 router.post('/login/register', loginController.register);
 router.post('/login/login', loginController.login);
 
