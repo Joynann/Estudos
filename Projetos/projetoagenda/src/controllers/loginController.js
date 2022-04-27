@@ -2,6 +2,7 @@ const Login = require('../models/LoginModel');
 
 exports.index = (req, res) =>
 {
+    if(req.session.user) return res.redirect('/');
     res.render('login', 
     {
         titulo: 'Login / Criar conta'
@@ -82,15 +83,8 @@ exports.login = async function(req, res)
     }
 }
 
-// exports.logout = (req, res) =>
-// {
-//     req.session.destroy();
-//     req.session.reload();
-//     res.locals.user = null;
-//     req.flash('success', 'Você saiu de sua conta com sucesso.');
-//     req.session.save(function()
-//     {
-//         return res.redirect('/');
-//     })
-//     return;
-// }
+exports.logout = (req, res) =>
+{
+    req.session.destroy();
+    res.redirect('/');
+}
