@@ -84,3 +84,27 @@ exports.edit = async (req, res) =>
         })
     }
 }
+
+exports.delete = async (req, res) =>
+{
+    try
+    {
+        if(!req.params.id) return res.render('404', {titulo:'Erro 404!'});
+        const contato = await Contato.deletaContato(req.params.id);
+        if(!contato) return res.render('404', {titulo:'Erro 404!'});
+        req.flash('success', 'Contato apagado com sucesso.');
+        req.session.save(() =>
+        {
+            return res.redirect('back');
+        })
+        return;
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.render('404', 
+        {
+            titulo: 'Erro 404!'
+        })
+    }
+}

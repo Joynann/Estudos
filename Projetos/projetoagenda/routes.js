@@ -23,6 +23,7 @@ router.get('/contato', middlewares.loginRequired, contatoController.index);
 router.post('/contato/register', middlewares.loginRequired, contatoController.register);
 router.get('/contato/editar/:id', middlewares.loginRequired, contatoController.editar);
 router.post('/contato/edit/:id', middlewares.loginRequired, contatoController.edit);
+router.get('/contato/deletar/:id', middlewares.loginRequired, contatoController.delete);
 
 // Export Router
 exports.router = router;

@@ -39,6 +39,7 @@ class Contato
         this.errors = Contato.valida(this.body);
 
         if(this.errors.length) return;
+        if(typeof(id) !== 'string') return this.errors.push('Contato inválido');
 
         this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, {new: true});
     }
@@ -47,6 +48,19 @@ class Contato
     {
         if(typeof(id) !== 'string') return;
         const contato = await ContatoModel.findById(id);
+        return contato;
+    }
+
+    static async buscaContatos()
+    {
+        const contatos = await ContatoModel.find().sort({data: -1});
+        return contatos;
+    }
+
+    static async deletaContato(id)
+    {
+        if(typeof(id) !== 'string') return;
+        const contato = await ContatoModel.findOneAndDelete({_id: id});
         return contato;
     }
 
