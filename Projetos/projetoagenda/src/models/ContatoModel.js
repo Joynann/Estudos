@@ -22,13 +22,6 @@ class Contato
         this.errors = [];
     }
 
-    static async verificaId(id)
-    {
-        if(typeof(id) !== 'string') return;
-        const contato = await ContatoModel.findById(id);
-        return contato;
-    }
-
     async registrar()
     {
         this.body = Contato.cleanUp(this.body);
@@ -38,6 +31,23 @@ class Contato
 
         this.contato = await ContatoModel.create(this.body);
         console.log(this.contato);
+    }
+
+    async edit(id)
+    {
+        this.body = Contato.cleanUp(this.body);
+        this.errors = Contato.valida(this.body);
+
+        if(this.errors.length) return;
+
+        this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, {new: true});
+    }
+
+    static async verificaId(id)
+    {
+        if(typeof(id) !== 'string') return;
+        const contato = await ContatoModel.findById(id);
+        return contato;
     }
 
     static cleanUp(body)

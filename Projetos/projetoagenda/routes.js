@@ -22,6 +22,7 @@ router.post('/login/login', loginController.login);
 router.get('/contato', middlewares.loginRequired, contatoController.index);
 router.post('/contato/register', middlewares.loginRequired, contatoController.register);
 router.get('/contato/editar/:id', middlewares.loginRequired, contatoController.editar);
+router.post('/contato/edit/:id', middlewares.loginRequired, contatoController.edit);
 
 // Export Router
 exports.router = router;

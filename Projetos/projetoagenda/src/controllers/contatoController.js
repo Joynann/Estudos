@@ -24,7 +24,6 @@ exports.register = async (req, res) =>
             })
             return;
         }
-
         req.flash('success', 'Contato cadastrado com sucesso.');
         req.session.save(() =>
         {
@@ -51,4 +50,37 @@ exports.editar = async (req, res) =>
         titulo: 'Contato',
         contato
     })
+}
+
+exports.edit = async (req, res) =>
+{
+    try
+    {
+        if(!req.params.id) return res.render('404', {titulo:'Erro 404!'});
+        const contato = new Contato(req.body);
+        await contato.edit(req.params.id);
+        if(contato.errors.length)
+        {
+            req.flash('errors', contato.errors);
+            req.session.save(() =>
+            {
+                return res.redirect('back');
+            })
+            return;
+        }
+        req.flash('success', 'Contato editado com sucesso.');
+        req.session.save(() =>
+        {
+            return res.redirect(`/contato/editar/${contato.contato._id}`);
+        })
+        return;
+    }
+    catch(e)
+    {
+        console.log(e);
+        res.render('404', 
+        {
+            titulo: 'Erro 404!'
+        })
+    }
 }
