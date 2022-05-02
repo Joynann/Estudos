@@ -30,7 +30,6 @@ class Contato
         if(this.errors.length) return;
 
         this.contato = await ContatoModel.create(this.body);
-        console.log(this.contato);
     }
 
     async edit(id)

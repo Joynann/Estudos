@@ -17,7 +17,7 @@
 
                             <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
 
-                            <form action="/login/register" method="post">
+                            <form action="/login/register" method="post" class="form-cadastro">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="mb-3">
                                     <label class="form-label">Seu e-mail</label>
@@ -38,7 +38,7 @@
 
                             <p>Se você já tem uma conta, faça login abaixo:</p>
 
-                            <form action="/login/login" method="post">
+                            <form action="/login/login" method="post" class="form-login">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="mb-3">
                                     <label class="form-label">Seu e-mail</label>

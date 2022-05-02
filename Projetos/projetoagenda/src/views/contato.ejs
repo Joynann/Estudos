@@ -14,9 +14,9 @@
                     <div class="row">
                         <div class="col-lg">
                             <% if(!contato._id){ %>
-                            <form action="/contato/register" method="post">
+                            <form action="/contato/register" method="post" class="form-contato">
                             <% } else{ %>
-                                <form action="/contato/edit/<%= contato._id %>" method="post">
+                                <form action="/contato/edit/<%= contato._id %>" method="post" class="form-contato">
                             <% } %>
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
