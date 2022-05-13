@@ -1,6 +1,7 @@
 require('dotenv').config();
+const { Sequelize } = require('sequelize');
 
-module.exports = {
+const configDatabase = {
   dialect: 'mariadb',
   host: process.env.DATABASE_HOST,
   port: process.env.DATABASE_PORT,
@@ -19,3 +20,7 @@ module.exports = {
   },
   timezone: 'America/Sao_Paulo',
 };
+
+const sequelize = new Sequelize(configDatabase);
+
+module.exports = sequelize;

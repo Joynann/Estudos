@@ -1,14 +1,16 @@
 import Aluno from '../models/Aluno';
+import database from '../config/database';
 
 class HomeController {
   async index(req, res) {
+    await database.sync();
     const novoAluno = await Aluno.create({
-      nome: 'Joynan',
-      sobrenome: 'Lagass Loose',
-      email: 'joynan112@gmail.com',
-      idade: 23,
-      peso: 77.5,
-      altura: 1.82,
+      nome: 'Jocelina',
+      sobrenome: 'Lagass',
+      email: 'jocelina@gmail.com',
+      idade: 47,
+      peso: 88.3,
+      altura: 1.70,
     });
     res.json(novoAluno);
   }

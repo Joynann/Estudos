@@ -1,17 +1,13 @@
-import Sequelize, { Model } from 'sequelize';
+const { Sequelize } = require('sequelize');
+const sequelize = require('../config/database');
 
-export default class Aluno extends Model {
-  static init(sequelize) {
-    super.init({
-      nome: Sequelize.STRING,
-      sobrenome: Sequelize.STRING,
-      email: Sequelize.STRING,
-      idade: Sequelize.INTEGER,
-      peso: Sequelize.FLOAT,
-      altura: Sequelize.FLOAT,
-    }, {
-      sequelize,
-    });
-    return this;
-  }
-}
+const Aluno = sequelize.define('aluno', {
+  nome: Sequelize.STRING,
+  sobrenome: Sequelize.STRING,
+  email: Sequelize.STRING,
+  idade: Sequelize.INTEGER,
+  peso: Sequelize.FLOAT,
+  altura: Sequelize.FLOAT,
+});
+
+module.exports = Aluno;
