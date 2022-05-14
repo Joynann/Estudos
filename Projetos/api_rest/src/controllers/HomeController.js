@@ -4,14 +4,7 @@ import database from '../config/database';
 class HomeController {
   async index(req, res) {
     await database.sync();
-    const novoAluno = await Aluno.create({
-      nome: 'Jocelina',
-      sobrenome: 'Lagass',
-      email: 'jocelina@gmail.com',
-      idade: 47,
-      peso: 88.3,
-      altura: 1.70,
-    });
+    const novoAluno = await Aluno.create();
     res.json(novoAluno);
   }
 }

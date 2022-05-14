@@ -24,3 +24,4 @@ const configDatabase = {
 const sequelize = new Sequelize(configDatabase);
 
 module.exports = sequelize;
+// module.exports = configDatabase;
