@@ -2,7 +2,9 @@ const { Sequelize, Model } = require('sequelize');
 const bcryptjs = require('bcryptjs');
 const sequelize = require('../config/database');
 
-class User extends Model {}
+class User extends Model {
+  passwordIsValid = (password) => bcryptjs.compare(password, this.password_hash);
+}
 User.init({
   nome: {
     type: Sequelize.STRING,
