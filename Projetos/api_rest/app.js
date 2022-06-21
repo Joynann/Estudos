@@ -3,7 +3,6 @@ import express from 'express';
 import homeRoute from './src/routes/homeRoute';
 import userRoute from './src/routes/userRoute';
 import tokenRoute from './src/routes/tokenRoute';
-import loginRequired from './src/middlewares/loginRequired';
 
 dotenv.config();
 
@@ -20,7 +19,7 @@ class App {
   }
 
   routes() {
-    this.app.use('/', loginRequired, homeRoute);
+    this.app.use('/', homeRoute);
     this.app.use('/users/', userRoute);
     this.app.use('/tokens/', tokenRoute);
   }
