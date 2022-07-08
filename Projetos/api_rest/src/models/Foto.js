@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 const Aluno = require('./Aluno');
 const sequelize = require('../config/database');
+const dataConfig = require('../config/dataConfig');
 
 const Foto = sequelize.define('foto', {
   originalname: {
@@ -19,6 +20,12 @@ const Foto = sequelize.define('foto', {
       notEmpty: {
         msg: 'O campo não pode estar vazio.',
       },
+    },
+  },
+  url: {
+    type: Sequelize.VIRTUAL,
+    get() {
+      return `${dataConfig.url}/images/${this.getDataValue('filename')}`;
     },
   },
 });

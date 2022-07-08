@@ -8,7 +8,7 @@ class HomeController {
       order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
       include: {
         model: Foto,
-        attributes: ['id', 'originalname'],
+        attributes: ['filename', 'url'],
       },
     });
     res.json(aluno);
@@ -25,7 +25,7 @@ class HomeController {
         order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
         include: {
           model: Foto,
-          attributes: ['id', 'originalname'],
+          attributes: ['filename', 'url'],
         },
       });
 
