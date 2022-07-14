@@ -5,11 +5,19 @@ import './Main.css';
 export default class Main extends Component {
   state = {
     novaTarefa: '',
-    tarefas: [
-      'Tomar café',
-      'Lavar a louça',
-      'Ir trabalhar',
-    ],
+    tarefas: [],
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { tarefas } = this.state;
+    const { novaTarefa } = this.state;
+
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
+
+    this.setState({
+      tarefas: [...tarefas, novaTarefa],
+    });
   };
 
   handleChange = (e) => {
@@ -25,7 +33,7 @@ export default class Main extends Component {
       <div className="main">
 
         <h1>Lista de tarefas</h1>
-        <form action="#" className="form">
+        <form onSubmit={this.handleSubmit} action="#" className="form">
           <input
             type="text"
             onChange={this.handleChange}
