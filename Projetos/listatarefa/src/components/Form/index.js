@@ -14,8 +14,7 @@ export default function Form({
       className="form"
     >
       <button
-        onClick={handleNoEdit}
-        type="submit"
+        type="button"
         className={classeAtivo}
       >
         <FaWindowClose
