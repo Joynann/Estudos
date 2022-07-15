@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { FaPlus, FaEdit, FaWindowClose } from 'react-icons/fa';
+
+import Form from './Form';
+import Tarefas from './Tarefas';
+
 import './Main.css';
 
 export default class Main extends Component {
@@ -97,47 +100,19 @@ export default class Main extends Component {
       <div className="main">
 
         <h1>Lista de tarefas</h1>
-        <form onSubmit={this.handleSubmit} action="#" className="form">
-          <button
-            onClick={this.handleNoEdit}
-            type="submit"
-            className={classeAtivo}
-          >
-            <FaWindowClose
-              onClick={this.handleNoEdit}
-              className="noEdit"
-            />
-          </button>
+        <Form
+          handleChange={this.handleChange}
+          handleNoEdit={this.handleNoEdit}
+          handleSubmit={this.handleSubmit}
+          classeAtivo={classeAtivo}
+          novaTarefa={novaTarefa}
+        />
 
-          <input
-            type="text"
-            onChange={this.handleChange}
-            value={novaTarefa}
-          />
-          <button type="submit" className="submit">
-            <FaPlus />
-          </button>
-        </form>
-
-        <div className="tarefas">
-          <ul>
-            {tarefas.map((tarefa, index) => (
-              <li key={tarefa}>
-                {tarefa}
-                <span>
-                  <FaEdit
-                    className="edit"
-                    onClick={() => { this.handleEdit(index); }}
-                  />
-                  <FaWindowClose
-                    className="delete"
-                    onClick={() => { this.handleDelete(index); }}
-                  />
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Tarefas
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
+          tarefas={tarefas}
+        />
 
       </div>
     );
