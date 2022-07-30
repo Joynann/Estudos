@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { primaryColor, primaryDarkColor } from '../config/colors';
 
 export default createGlobalStyle`
   * {
@@ -8,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #ccc;
+    background: ${primaryDarkColor};
   }
 `;
 
@@ -16,6 +17,6 @@ export default createGlobalStyle`
 export const Container = styled.section`
   max-width: 500px;
   margin: 30px auto;
-  background: white;
+  background: ${primaryColor};
   text-align: center;
 `;
