@@ -1,5 +1,13 @@
+import Login from './pages/Login';
+import GlobalStyle, { Container } from './styles/GlobalStyles';
+
 function App() {
-  return <h1>Hello World!!</h1>;
+  return (
+    <Container>
+      <Login />
+      <GlobalStyle />
+    </ Container>
+  );
 }
 
 export default App;
