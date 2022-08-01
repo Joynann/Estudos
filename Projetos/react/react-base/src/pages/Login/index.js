@@ -1,8 +1,9 @@
 import { Title, Paragrafo } from './styled';
+import { Container } from '../../styles/GlobalStyles';
 
 export default function Login() {
   return (
-    <>
+    <Container>
       <Title>
         Login
         <small>teste</small>
@@ -10,6 +11,6 @@ export default function Login() {
       <Paragrafo>
         TESTE DE TEXTO ALEATÓRIO.
       </Paragrafo>
-    </>
+    </ Container>
   );
 }
