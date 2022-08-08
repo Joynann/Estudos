@@ -5,10 +5,10 @@ export default function Login() {
   return (
     <Container>
       <Title>
-        Login
+        Sign In
       </ Title>
       <Paragrafo>
-        Conecte-se aqui!
+        Cadastre-se aqui!
       </Paragrafo>
     </ Container>
   );
