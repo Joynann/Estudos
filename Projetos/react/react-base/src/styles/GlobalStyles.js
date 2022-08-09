@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryDarkColor } from '../config/colors';
+import * as colors from '../config/colors';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -9,7 +10,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${primaryDarkColor};
+    background: ${colors.primaryDarkColor};
   }
 `;
 

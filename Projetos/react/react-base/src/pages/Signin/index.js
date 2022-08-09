@@ -8,7 +8,7 @@ export default function Login() {
         Sign In
       </ Title>
       <Paragrafo>
-        Cadastre-se aqui!
+        Sua conta foi desconectada.
       </Paragrafo>
     </ Container>
   );
