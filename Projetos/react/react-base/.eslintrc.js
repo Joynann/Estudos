@@ -35,6 +35,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/self-closing-comp": "warn",
     "react/jsx-filename-extension": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "default-param-last": "off"
   },
 };
