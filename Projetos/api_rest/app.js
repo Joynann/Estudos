@@ -12,6 +12,7 @@ import fotoRoute from './src/routes/fotoRoute';
 
 const whiteList = [
   'http://localhost:3001',
+  'http://localhost:3000',
 ];
 
 const corsOptions = {
