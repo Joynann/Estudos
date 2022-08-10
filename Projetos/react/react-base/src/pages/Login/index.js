@@ -20,7 +20,7 @@ export default function Login() {
       <Paragrafo>
         Conecte-se aqui!
       </Paragrafo>
-      <button type='submit' onClick={handleClick}>Enviar</button>
+      <button type='button' onClick={handleClick}>Enviar</button>
     </ Container>
   );
 }
