@@ -3,9 +3,9 @@ import { toast } from 'react-toastify';
 import * as actions from './actions';
 import * as types from '../types';
 
-const request = () => new Promise((resolve, reject) => {
+const request = () => new Promise((resolve) => {
   setTimeout(() => {
-    reject();
+    resolve();
   }, 2000)
 });
 
