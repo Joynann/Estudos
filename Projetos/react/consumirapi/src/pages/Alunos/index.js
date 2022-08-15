@@ -1,11 +1,11 @@
 import { Title } from './styled';
 import { Container } from '../../styles/GlobalStyles';
 
-export default function Login() {
+export default function Alunos() {
   return (
     <Container>
       <Title>
-        Login
+        Alunos
       </ Title>
     </ Container>
   );
