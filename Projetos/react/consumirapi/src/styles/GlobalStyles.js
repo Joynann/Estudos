@@ -31,6 +31,10 @@ export default createGlobalStyle`
     margin-top: 15px;
   }
 
+  button:hover {
+    filter: brightness(75%);
+  }
+
   a {
     text-decoration: none;
     color: ${colors.primaryColor};
@@ -39,11 +43,15 @@ export default createGlobalStyle`
   ul {
     list-style: none;
   }
+
+  img {
+    width: 100%;
+  }
 `;
 
 
 export const Container = styled.section`
-  max-width: 360px;
+  max-width: 480px;
   background: white;
   margin: 30px auto;
   text-align: center;

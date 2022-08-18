@@ -3,10 +3,10 @@ import { Container } from '../../styles/GlobalStyles';
 
 export default function Aluno() {
   return (
-    <Container>
+    < Container >
       <Title>
         Aluno
       </ Title>
-    </ Container>
+    </ Container >
   );
 }
